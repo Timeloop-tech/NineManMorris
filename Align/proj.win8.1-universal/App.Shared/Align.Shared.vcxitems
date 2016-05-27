@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e956c24b-f04e-47bf-bf00-746681ae1301</SharedGUID>
+    <ItemsProjectGuid>{a3ad93e4-0b2f-4c58-9181-69bed2e42e3e}</ItemsProjectGuid>
+    <ItemsRootNamespace>Align</ItemsRootNamespace>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\BoardManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Dice.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Edge.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\GameBoard.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\GameColors.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\GameMessage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\MainMenu.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Player.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Position.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)App.xaml.cpp">
+      <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Cocos2dRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLES.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml.cpp">
+      <DependentUpon>$(MSBuildThisFileDirectory)OpenGLESPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\AppDelegate.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\BoardConfiguration.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\BoardManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Dice.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Edge.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\GameBoard.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\GameColors.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\GameMessage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\MainMenu.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Player.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Position.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h">
+      <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
+    </ClInclude>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Cocos2dRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLES.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml.h">
+      <DependentUpon>$(MSBuildThisFileDirectory)OpenGLESPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <_CustomResource Include="$(MSBuildThisFileDirectory)..\..\Resources\**\*">
+      <Link>Assets\Resources\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </_CustomResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml" />
+  </ItemGroup>
+  <Target Name="_CollectCustomResources" BeforeTargets="AssignTargetPaths">
+    <Message Text="Adding resource: %(_CustomResource.Identity) -&gt; %(_CustomResource.Link)" />
+    <ItemGroup>
+      <None Include="@(_CustomResource)" />
+    </ItemGroup>
+  </Target>
+</Project>

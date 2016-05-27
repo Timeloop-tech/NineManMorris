@@ -1,0 +1,23 @@
+<Solution>
+  <PropertyGroup Name="CocosProject" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="fonts">
+          <TTF Name="arial.ttf" />
+          <Fnt Name="Impact_white.fnt" />
+          <TTF Name="Marker Felt.ttf" />
+        </Folder>
+        <Folder Name="images">
+          <Image Name="Edge.png" />
+          <Image Name="elipse.png" />
+        </Folder>
+        <Project Name="BoardLayout_1.csd" Type="Layer" />
+        <Project Name="BoardLayout_2.csd" Type="Layer" />
+        <Project Name="BoardLayout_3.csd" Type="Layer" />
+        <Project Name="GameBoard.csd" Type="Scene" />
+        <Project Name="MainMenu.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
